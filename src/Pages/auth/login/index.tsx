@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import icon_eye from "../../../assets/icon_eye.svg";
 
-function Form():JSX.Element {
+function Form(): JSX.Element {
   const [inputValue, setInputValue] = useState<string>("example@mail.com");
   const [passValue, setPassValue] = useState<string>("");
   const [isValidEmail, setIsValidEmail] = useState<boolean>(true);
@@ -15,16 +15,18 @@ function Form():JSX.Element {
   const [hasMinLength, setHasMinLength] = useState<boolean>(false);
   const [showCriteria, setShowCriteria] = useState<boolean>(true);
 
+  console.log(hasLowercase);
+
   const navigate = useNavigate();
 
   function handleEmail(value: string): void {
     const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     setIsValidEmail(emailRegex.test(value));
     localStorage.setItem("authToken", "sampleToken");
-    navigate("/"); 
+    navigate("/");
   }
 
-  function handlePasswordChange(value: string): void{
+  function handlePasswordChange(value: string): void {
     setPassValue(value);
 
     const lowercase = /[a-z]/.test(value);
