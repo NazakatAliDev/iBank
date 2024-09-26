@@ -1,7 +1,6 @@
 import Side_2 from "../Admin_Manage_User/Components/Side_2";
 import Navbar from "../Admin_Manage_User/Components/Navbar";
 import Menu_History from "./Components/menu";
-import Aside_History from "./Components/Aside_History";
 
 function History(): JSX.Element {
   return (
@@ -11,13 +10,9 @@ function History(): JSX.Element {
           <Side_2 />
         </div>
 
-        <div className="h-auto w-[54%] ml-[23%] px-[10px]">
+        <div className="h-auto w-full ml-[23%] px-[10px]">
           <Navbar title="History Transfer" heading="Transfers balance to your users" />
           <Menu_History />
-        </div>
-
-        <div className="h-auto w-[23%] ml-auto">
-          <Aside_History />
         </div>
       </div>
     </>

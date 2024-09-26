@@ -17,7 +17,7 @@ function Side_2(): JSX.Element {
   return (
     <>
       <div className="flex">
-        <div className={`bg-[green] h-[850px] p-5 pt-8 ${open ? "w-72" : "w-20"} duration-300 relative`}>
+        <div className={` h-[850px] p-5 pt-8 ${open ? "w-72" : "w-20"} duration-300 relative`}>
           <FaArrowLeftLong className={`bg-white border-[1px] border-[#2b004e] text-[#2b004e] text-2xl cursor-pointer p-[3px] rounded-[50%] absolute right-[-10px] ${!open && "rotate-180"}`} onClick={() => setOpen(!open)} />
           <img src={Logo} alt="" className={`mx-auto w-[215px] pt-[5px] ${!open && "hidden"}`} />
           <h3 className={`${!open && "hidden"} text-[18px] mt-[30px] mb-[5px] text-[#034b5e] ml-[20px] font-bold`}>General</h3>
@@ -49,7 +49,7 @@ function Side_2(): JSX.Element {
           </div>
           <div className={`flex h-[70px] w-[250px] mx-auto mt-[106px]`}>
             <div className="ml-[23px]">
-              <Img_list src={Out} title="Log Out" open={open} isActive={false}/>
+              <Img_list src={Out} title="Log Out" open={open} isActive={false} />
             </div>
           </div>
         </div>

@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import search1 from "../../../assets/search.svg";
 
-function Aside_History():JSX.Element {
+function Aside_History(): JSX.Element {
+  const Api_Data = useSelector((state) => state.user.data);
+  // console.log(Api_Data);
   return (
     <>
       <div className="h-auto w-full">
@@ -26,34 +29,12 @@ function Aside_History():JSX.Element {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className="px-4 py-3">Fadhil Arga</td>
-                <td className="px-4 py-3">Katrhyn21</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">Fadhil Aksara</td>
-                <td className="px-4 py-3">Henrygaul</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">Fadhil Rubian</td>
-                <td className="px-4 py-3">Penagolem</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">Fadhil Gimari</td>
-                <td className="px-4 py-3">Floydbanjir</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">Fadhil Muhammad</td>
-                <td className="px-4 py-3">Katrhyn21</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">Fadhil Sausu</td>
-                <td className="px-4 py-3">Henrygaul</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">Fadhil Robert</td>
-                <td className="px-4 py-3">Penagolem</td>
-              </tr>
+              {Api_Data.map((item) => (
+                <tr key={item.id}>
+                  <td className="px-4 py-3">{item.name}</td>
+                  <td className="px-4 py-3">{item.username}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

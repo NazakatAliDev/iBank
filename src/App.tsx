@@ -1,8 +1,11 @@
 import Index from "./Pages/home/index";
+import Routes from "./routes/index";
 function App() {
   return (
     <>
-      <Index />
+      <Routes>
+        <Index />
+      </Routes>
     </>
   );
 }

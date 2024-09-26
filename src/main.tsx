@@ -2,12 +2,14 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
-import Routes from "./routes/index.js";
+// import Routes from "./routes/index.js";
+import { Provider } from "react-redux";
+import { store } from './Pages/store/store';
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Routes>
-      <App />
-    </Routes>
+    <Provider store={store}>
+        <App />
+    </Provider>
   </StrictMode>
 );
